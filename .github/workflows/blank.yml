@@ -1,0 +1,20 @@
+sito = int(input("до какого числа просеять? "))
+a = [0] * sito
+for i in range(sito):
+    a[i] = i
+a[1] = 0
+
+m = 2
+while m < sito:
+    if a[m] != 0:
+        j = m * 2
+        while j < sito:
+            a[j] = 0
+            j = j + m
+    m += 1
+b = []
+for i in a:
+    if a[i] != 0:
+        b.append(a[i])
+del a
+print(b)
